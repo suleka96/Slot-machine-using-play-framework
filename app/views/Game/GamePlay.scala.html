@@ -1,0 +1,51 @@
+@()
+<!-- HTML respomsible for the game GUI -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Slot Machine | GamePlay</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+        <!-- the javascript file that handels  the downloading of a text file -->
+        <script src="@routes.Assets.versioned("javascripts/FileSaver.js")" type="text/javascript"></script>
+        <!-- the javascript file that handels  game logic -->
+        <script src="@routes.Assets.versioned("typescripts/GameControl.js")" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <!-- header that holds the title of each page -->
+        <section id="header">
+            <div class="titleWrapper gameTitle">
+                <h1>Slot Machine | GamePlay Play</h1>
+            </div>
+        </section>
+        <!--buttons responsible for game play manipulations -->
+        <div id="cont">
+            <button  type="button" class="btn btn-2 btn-2g game" id="addCoinBtn">Add Coin</button>
+            <button  type="button" class="btn btn-2 btn-2g game" id="betOneBtn">Bet One</button>
+            <button  type="button" class="btn btn-2 btn-2g game" id="betMaxBtn">Bet Max</button>
+            <button  type="button" class="btn btn-2 btn-2g game" id="resetBetBtn">Reset Bet</button>
+            <button  type="button" class="btn btn-2 btn-2g game" id="statBtn">Statistics</button>
+            <button  type="button" class="btn btn-2 btn-2g game" id="logout">Log Out</button>
+            <button  type="button" class="btn btn-2 btn-2g game" id="payout">Payout Info</button>
+        </div>
+        <!-- labels that set the titles of the bet area and credit area -->
+        <div id="stat">
+            <label id="creditAmount">Credit Amount</label>
+            <label id="betAmount">Bet Amount</label>
+        </div>
+        <!-- labels that set the values of the bet area and credit area -->
+        <div id="statArea">
+            <label id="creditArea">10</label>
+            <label id="betArea">00</label>
+        </div>
+        <!-- the 3 image slots to which the symbols are set when spinning-->
+        <div id="slots">
+            <img class="slotImg" id="reel1" src="@routes.Assets.versioned("images/cherry.png")" width="200" height="200" />
+            <img class="slotImg" id="reel2" src="@routes.Assets.versioned("images/lemon.png")"  width="200" height="200" />
+            <img class="slotImg" id="reel3" src="@routes.Assets.versioned("images/watermelon.png")"  width="200" height="200" />
+        </div>
+        <!-- button that spins the reels-->
+        <button  type="button" class="btn btn-2 btn-2g spin" id="spinBtn">SPIN</button>
+        </body>
+</html>

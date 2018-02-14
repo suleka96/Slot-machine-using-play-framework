@@ -1,0 +1,26 @@
+@()
+<!-- HTML responsible for the spalsh screen GUI -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Welcome to Slot Machine</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+          <!-- javascript file that hadels the spalsh screen logic -->
+        <script src="@routes.Assets.versioned("typescripts/PlayEventControl.js")" type="text/javascript"></script>
+    </head>
+    <body>
+            <!-- header that holds the title of each page -->
+        <section id="header">
+            <div class="titleWrapper splashTitle">
+                <h1>Welcome to the Slot Machine</h1>
+            </div>
+        </section>
+        <div class="form">
+            <div id="content" >
+                <img id="playImg" src="@routes.Assets.versioned("images/playSlot1.png")" width="400" height="400" /><!-- image -->
+                <button  type="button" class="btn btn-2 btn-2g play" id="playBtn">PLAY</button><!-- play button -->
+            </div>
+        </div>
+    </body>
+</html>

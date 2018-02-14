@@ -1,0 +1,40 @@
+@()
+<!-- HTML responsible for the statistics GUI -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Slot Machine | Statistics</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+            <!-- the javascript file that handels  the downloading of a text file -->
+        <script src="@routes.Assets.versioned("javascripts/FileSaver.js")" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <!-- the scripts responsible for the loadig of the pie charts -->
+        <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+        <script>
+                zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+                ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
+        </script>
+    </head>
+    <body>
+            <!-- header that holds the title of each page -->
+        <section id="header">
+            <div class="titleWrapper statTitle">
+                <h1>Slot Machine |GamePlay Statistics</h1>
+            </div>
+        </section>
+            <!-- chart showing game summary -->
+        <div id='myChart1'><a class="zc-ref" href="https://www.zingchart.com/">Charts by ZingChart</a></div>
+            <!-- javascript file that hadels the statistics logic -->
+        <script src="@routes.Assets.versioned("typescripts/StatControl.js")" type="text/javascript"></script>
+            <!-- chart showing credit summary -->
+        <div id='myChart2'><a class="zc-ref" href="https://www.zingchart.com/">Charts by ZingChart</a></div>
+            <!-- labels that display number of losses, wins and average number of credits netted-->
+        <div id="statText">
+            <label id="gameSummary"></label>
+            <label id="creditSummary"></label>
+        </div>
+            <!-- buttons that downloads a text file with all the stat information-->
+        <button  type="button" class="btn btn-2 btn-2g saveStat" id="saveStatBtn">SAVE STATISTICS</button>
+    </body>
+</html>
