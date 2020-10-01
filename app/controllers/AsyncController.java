@@ -15,15 +15,18 @@ import scala.concurrent.ExecutionContext;
 import scala.concurrent.duration.Duration;
 import scala.concurrent.ExecutionContextExecutor;
 
+// AsyncController is a singleton Controller class that defines the functionality
+// for asynchronous tasks within the slot machine application
+
 @Singleton
 public class AsyncController extends Controller {
 
-    private final ActorSystem actorSystem;
+    private final ActorSystem system;
     private final ExecutionContextExecutor exec;
 
     @Inject
-    public AsyncController(ActorSystem actorSystem, ExecutionContextExecutor exec) {
-      this.actorSystem = actorSystem;
+    public AsyncController(ActorSystem system, ExecutionContextExecutor exec) {
+      this.system = system;
       this.exec = exec;
     }
 
@@ -33,7 +36,7 @@ public class AsyncController extends Controller {
 
     private CompletionStage<String> getFutureMessage(long time, TimeUnit timeUnit) {
         CompletableFuture<String> future = new CompletableFuture<>();
-        actorSystem.scheduler().scheduleOnce(
+        system.scheduler().scheduleOnce(
             Duration.create(time, timeUnit),
             () -> future.complete("Hi!"),
             exec
