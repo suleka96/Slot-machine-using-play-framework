@@ -45,7 +45,7 @@ window.onload = () => {
     //jquery to run the firebase CDN and configure firebase
     $.getScript("https://www.gstatic.com/firebasejs/4.8.1/firebase.js", function () {
         let config = {
-            apiKey: "AIzaSyAeDDqMPrRgaTLWNZb0YCb67GLzENDvBmI",
+            apiKey: "",
             authDomain: "slotmachine-6b4dc.firebaseapp.com",
             databaseURL: "https://slotmachine-6b4dc.firebaseio.com",
             projectId: "slotmachine-6b4dc",
